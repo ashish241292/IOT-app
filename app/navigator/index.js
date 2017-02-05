@@ -10,7 +10,7 @@ export default (route, navigator) => {
     let Component = null;
     //render your pages here.
     switch (route.title) {
-        case "index": {
+        case "e-Bulb": {
             Component = IndexPageContainer;
             break;
         }

@@ -25,7 +25,7 @@ export default class Drawer extends Component {
                 drawerPosition={DrawerLayoutAndroid.positions.Left}
                 >
                     <View style={{flex:1}}>
-                        <View style={{flex:1, borderWidth:0}} elevation={7}>
+                        <View style={{flex:1.12, borderWidth:0, minHeight:40}} elevation={7}>
                             <Toolbar />
                         </View>
                         <View style={{flex:10}}>

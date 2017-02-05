@@ -12,7 +12,7 @@ export default class Toolbar extends Component {
     render(){
         return (
             <ToolbarAndroid
-                title="AwesomeApp"
+                title={route.title}
                 style={{flex:1, backgroundColor:STRING.toolBar}}
                 titleColor="#ffffff"
              />

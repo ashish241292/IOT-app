@@ -1,5 +1,5 @@
 initialRoute = {
-    title: "index",
+    title: "e-Bulb",
     index: 0,
     payload: {
 
