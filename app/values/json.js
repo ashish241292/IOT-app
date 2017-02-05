@@ -1,5 +1,5 @@
 initialRoute = {
-    title: "home",
+    title: "index",
     index: 0,
     payload: {
 

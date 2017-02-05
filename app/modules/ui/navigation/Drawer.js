@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Toolbar from './Toolbar'
 import {
     View,
     Text,
@@ -10,19 +11,27 @@ export default class Drawer extends Component {
         super(props);
     }
     _navigationView() {
-        return
+        return (
             <View>
                 <Text> Place your navigatin link here.</Text>
             </View>
+        )
     }
     render(){
         return (
             <DrawerLayoutAndroid
                 drawerWidth={300}
-                renderNavigationView = { this._navigationView.bind(this) }
+                renderNavigationView = { this._navigationView }
                 drawerPosition={DrawerLayoutAndroid.positions.Left}
-                ><Text>Hello!!</Text>
-                { this.props.children }
+                >
+                    <View style={{flex:1}}>
+                        <View style={{flex:1, borderWidth:0}} elevation={7}>
+                            <Toolbar />
+                        </View>
+                        <View style={{flex:10}}>
+                            { this.props.children }
+                        </View>
+                    </View>
             </DrawerLayoutAndroid>
         )
     }

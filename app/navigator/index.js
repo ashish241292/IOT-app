@@ -1,24 +1,28 @@
 import React from 'react';
 import { Drawer } from './../modules/ui/navigation';
+import {IndexPageContainer} from './../modules/pages/index';
 
 export default (route, navigator) => {
     //Set router and navigator to global and make it visible to through out the app.
     global.route = route;
     global.nav = navigator;
-    //render your pages here.
+
     let Component = null;
+    //render your pages here.
+    switch (route.title) {
+        case "index": {
+            Component = IndexPageContainer;
+            break;
+        }
+    }
 
-    // switch ( route.title ) {
-    //     case "home":
-    //
-    //         break;
-    //     default:  "";
-    //
-    // }
-
-    return(
+    return (
         <Drawer>
-            <Component />
+            {Component ? <Component /> : null}
         </Drawer>
     )
 }
+
+onMainScreen = () => initialRoute.title == route.title
+
+goBack = () => navigator.pop();
