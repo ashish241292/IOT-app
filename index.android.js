@@ -1,53 +1,37 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
+import './app/values';
+import "./app/styles";
+import "./app/modules/core";
+import renderScene from './app/navigator';
 import React, { Component } from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  Navigator,
+  BackAndroid,
+  ToastAndroid
 } from 'react-native';
+
+BackAndroid.addEventListener('hardwareBackPress', () => {
+//check for the main screen when physical back button is preser
+ if (!onMainScreen()) {
+   goBack();
+   return true;
+ }
+ return false;
+});
+
+//A Global function to show messages to user.
+Toast = ( message, duration = ToastAndroid.SHORT) => {
+    ToastAndroid.show(message, duration)
+}
 
 export default class IOT extends Component {
   render() {
+      global.Icon = Icon;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+        <Navigator initialRoute={ initialRoute } renderScene={ renderScene }/>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('IOT', () => IOT);
