@@ -1,1 +1,2 @@
-import "./Button.js";
+import "./Button";
+import "./Drawer";

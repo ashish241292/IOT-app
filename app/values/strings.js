@@ -21,5 +21,6 @@ STRING = {
             off: "ios-bulb-outline",
         }
     },
+    fontFamily:'Roboto, sans-serif',
     baseURL: "http://192.168.0.17:3000/api",
 };

@@ -11,7 +11,7 @@ ButtonStyle = StyleSheet.create({
         alignItems: "center",
     },
     text:{
-        fontFamily:'Roboto, sans-serif',
+        fontFamily: STRING.fontFamily,
         fontSize: 16,
         fontWeight: "500",
         textAlign: 'justify',
